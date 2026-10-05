@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flower Garden Hub</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#fff8fc;color:#333}
+header{background:linear-gradient(90deg,#e91e63,#9c27b0);color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
+.logo{font-size:25px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin-left:18px;font-weight:bold}
+nav a:hover{text-decoration:underline}
+.hero{min-height:88vh;background:linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.22)),url("flower-garden-bg.png");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:30px}
+.hero h1{font-size:55px;margin-bottom:15px;text-shadow:0 3px 12px rgba(0,0,0,.5)}.hero p{font-size:20px;margin-bottom:25px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.btn{display:inline-block;background:#e91e63;color:white;padding:12px 24px;border:0;border-radius:25px;cursor:pointer;font-size:15px;text-decoration:none;transition:.3s}
+.btn:hover{background:#ad1457;transform:scale(1.04)}
+section{padding:60px 7%}.title{text-align:center;color:#9c27b0;margin-bottom:30px;font-size:32px}
+.intro{text-align:center;max-width:800px;margin:auto;line-height:1.7}
+.flower-container,.garden-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.flower-card,.garden-card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.12);transition:.3s}
+.flower-card:hover,.garden-card:hover{transform:translateY(-8px)}
+.flower-card img,.garden-card img{width:100%;height:210px;object-fit:cover}
+.card-content{padding:18px;text-align:center}.card-content h3{color:#e91e63;margin-bottom:10px}
+.card-content p{line-height:1.5;margin-bottom:15px}
+.garden-card h3{color:#18815a}
+.badge{display:inline-block;background:#f7e6f4;color:#8e2d82;padding:5px 10px;border-radius:15px;font-size:12px;margin-bottom:10px}
+.search-box{text-align:center;margin-bottom:25px}.search-box input{width:70%;max-width:500px;padding:13px;border:2px solid #e91e63;border-radius:25px;outline:none;font-size:16px}
+.form-box{max-width:600px;margin:auto;background:white;padding:30px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.12)}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:12px;margin:8px 0 15px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+.form-box label{font-weight:bold}.result{text-align:center;margin-top:18px;font-size:19px;font-weight:bold;color:#9c27b0;line-height:1.6}
+footer{background:#4a154b;color:white;text-align:center;padding:25px;line-height:1.8}
+@media(max-width:768px){header{flex-direction:column;gap:15px}nav{text-align:center}nav a{display:inline-block;margin:4px;font-size:13px}.hero h1{font-size:38px}.hero p{font-size:17px}.search-box input{width:100%;margin-bottom:10px}}
+</style>
+</head>
+
+<body>
+<header>
+<div class="logo">🌸 Flower Garden Hub</div>
+<nav>
+<a href="#home">Home</a><a href="#flowers">Flowers</a><a href="#gardens">Gardens</a><a href="#search">Search</a><a href="#register">Register</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h1>🌸 Flower Garden Hub</h1>
+<p>🌹🌼🌻 A Colorful Garden Full of Beautiful Flowers 🌸🌺🪷</p>
+<a href="#flowers" class="btn">Explore Flowers 🌺</a><div style="margin-top:22px;font-size:28px">🌹 🌼 🌻 🌸 🌺 🪷 🌼</div>
+</div>
+</section>
+
+<section>
+<h2 class="title">🌿 Welcome to Our Garden</h2>
+<p class="intro">Welcome to Flower Garden Hub. Explore beautiful flowers, colorful gardens and famous natural places. This beginner-friendly website is created using HTML, CSS and simple JavaScript.</p>
+</section>
+
+<section id="flowers">
+<h2 class="title">🌺 Beautiful Flowers Collection</h2>
+<div class="flower-container">
+
+<div class="flower-card">
+<img src="rose.png">
+<div class="card-content"><h3>🌹 Rose</h3><p>గులాబీ • Beautiful, colorful and fragrant flower.</p><button class="btn" onclick="addFavorite('Rose')">❤️ Favorite</button></div>
+</div>
+
+<div class="flower-card">
+<img src="chrysanthemum.png">
+<div class="card-content"><h3>🌼 Chrysanthemum</h3><p>చామంతి • Colorful flower in many beautiful shades.</p><button class="btn" onclick="addFavorite('Chrysanthemum')">❤️ Favorite</button></div>
+</div>
+
+<div class="flower-card">
+<img src="sunflower.png">
+<div class="card-content"><h3>🌻 Sunflower</h3><p>పొద్దుతిరుగుడు • Bright yellow and cheerful flower.</p><button class="btn" onclick="addFavorite('Sunflower')">❤️ Favorite</button></div>
+</div>
+
+<div class="flower-card">
+<img src="jasmine.png">
+<div class="card-content"><h3>🌸 Jasmine / Malli</h3><p>మల్లె • Small white flower with sweet fragrance.</p><button class="btn" onclick="addFavorite('Jasmine')">❤️ Favorite</button></div>
+</div>
+
+<div class="flower-card">
+<img src="hibiscus.png">
+<div class="card-content"><h3>🌺 Hibiscus</h3><p>మందారం • Attractive tropical garden flower.</p><button class="btn" onclick="addFavorite('Hibiscus')">❤️ Favorite</button></div>
+</div>
+
+<div class="flower-card">
+<img src="lotus.png">
+<div class="card-content"><h3>🪷 Lotus</h3><p>కమలం • Beautiful water flower known for purity.</p><button class="btn" onclick="addFavorite('Lotus')">❤️ Favorite</button></div>
+</div>
+
+<div class="flower-card">
+<img src="marigold.png">
+<div class="card-content"><h3>🌼 Marigold</h3><p>బంతి • Bright yellow and orange decorative flower.</p><button class="btn" onclick="addFavorite('Marigold')">❤️ Favorite</button></div>
+</div>
+
+</div>
+</section>
+
+<section id="gardens">
+<h2 class="title">🇮🇳 Beautiful Gardens of Andhra Pradesh</h2>
+<p class="intro" style="margin-bottom:30px">Explore beautiful garden and nature destinations from Visakhapatnam and Araku Valley in Andhra Pradesh.</p>
+
+<div class="garden-container">
+
+<div class="garden-card">
+<img src="kailasagiri.png">
+<div class="card-content">
+<span class="badge">VISAKHAPATNAM</span>
+<h3>🌿 Kailasagiri</h3>
+<p>Beautiful green hill park with gardens, sea views and flower attractions.</p>
+<a class="btn" href="https://visakhapatnam.ap.gov.in/landscapes/" target="_blank">Know More</a>
+</div>
+</div>
+
+<div class="garden-card">
+<img src="tenneti-park.png">
+<div class="card-content">
+<span class="badge">VISAKHAPATNAM</span>
+<h3>🌊 Tenneti Park</h3>
+<p>A beautiful urban park beside the Bay of Bengal on Beach Road.</p>
+<a class="btn" href="https://visakhapatnam.ap.gov.in/landscapes/" target="_blank">Know More</a>
+</div>
+</div>
+
+<div class="garden-card">
+<img src="araku-valley.png">
+<div class="card-content">
+<span class="badge">ARAKU VALLEY</span>
+<h3>🏔️ Araku Valley</h3>
+<p>Green valleys, forests, streams and coffee plantations in the Eastern Ghats.</p>
+<a class="btn" href="https://visakhapatnam.ap.gov.in/forest-tourism/" target="_blank">Know More</a>
+</div>
+</div>
+
+<div class="garden-card">
+<img src="padmapuram-garden.png">
+<div class="card-content">
+<span class="badge">ARAKU VALLEY</span>
+<h3>🌹 Padmapuram Gardens</h3>
+<p>Famous Araku garden with flower beds, greenery and tree-top attractions.</p>
+<a class="btn" href="https://visakhapatnam.ap.gov.in/forest-tourism/" target="_blank">Know More</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="search">
+<h2 class="title">🔍 Search Flowers</h2>
+<div class="search-box">
+<input id="searchInput" type="text" placeholder="Enter flower name...">
+<button class="btn" onclick="searchFlower()">Search</button>
+</div>
+<div class="result" id="searchResult"></div>
+</section>
+
+<section>
+<h2 class="title">💰 Flower Price Calculator</h2>
+<div class="form-box">
+<label>Select Flower</label>
+<select id="flowerSelect">
+<option value="50">Rose - ₹50</option><option value="40">Chrysanthemum - ₹40</option>
+<option value="60">Sunflower - ₹60</option><option value="45">Jasmine - ₹45</option><option value="55">Hibiscus - ₹55</option>
+</select>
+<label>Quantity</label><input id="quantity" type="number" min="1" placeholder="Enter quantity">
+<button class="btn" onclick="calculatePrice()">Calculate Total</button>
+<div class="result" id="priceResult"></div>
+</div>
+</section>
+
+<section id="register">
+<h2 class="title">📝 Flower Registration</h2>
+<div class="form-box">
+<label>Your Name</label><input id="userName" type="text" placeholder="Enter your name">
+<label>Email</label><input id="email" type="email" placeholder="Enter your email">
+<label>Select Flower</label>
+<select id="registerFlower"><option value="">Choose Flower</option><option>Rose</option><option>Chrysanthemum</option><option>Sunflower</option><option>Jasmine</option><option>Hibiscus</option><option>Lotus</option><option>Marigold</option></select>
+<label>Quantity</label><input id="registerQuantity" type="number" min="1" placeholder="Enter quantity">
+<button class="btn" onclick="registerFlower()">Register 🌸</button>
+<div class="result" id="registerResult"></div>
+</div>
+</section>
+
+<section>
+<h2 class="title">📞 Contact Us</h2>
+<div class="form-box">
+<label>Name</label><input type="text" placeholder="Your name">
+<label>Email</label><input type="email" placeholder="Your email">
+<label>Message</label><textarea rows="5" placeholder="Write your message"></textarea>
+<button class="btn" onclick="sendMessage()">Send Message 📩</button>
+</div>
+</section>
+
+<footer>
+<p>🌸 Flower Garden Hub</p>
+<p>Explore Nature • Love Flowers • Enjoy Gardens</p>
+<p>© 2026 Flower Garden Hub</p>
+</footer>
+
+<script>
+let favoriteCount=0;
+
+function addFavorite(flowerName){
+favoriteCount++;
+alert("❤️ "+flowerName+" added to favorites!\nTotal Favorites: "+favoriteCount);
+}
+
+function searchFlower(){
+let text=document.getElementById("searchInput").value.toLowerCase().trim();
+let flowers=["rose","chrysanthemum","sunflower","jasmine","hibiscus","lotus","marigold","tulip"];
+let result=document.getElementById("searchResult");
+if(text==="") result.innerHTML="⚠️ Please enter a flower name.";
+else if(flowers.includes(text)) result.innerHTML="🌺 "+text.toUpperCase()+" is available in our Flower Garden Hub!";
+else result.innerHTML="😔 Flower not found. Try another flower.";
+}
+
+function calculatePrice(){
+let price=Number(document.getElementById("flowerSelect").value);
+let quantity=Number(document.getElementById("quantity").value);
+let result=document.getElementById("priceResult");
+if(quantity<=0||isNaN(quantity)) result.innerHTML="⚠️ Please enter a valid quantity.";
+else result.innerHTML="💰 Total Price: ₹"+(price*quantity);
+}
+
+function registerFlower(){
+let name=document.getElementById("userName").value.trim();
+let email=document.getElementById("email").value.trim();
+let flower=document.getElementById("registerFlower").value;
+let quantity=document.getElementById("registerQuantity").value;
+let result=document.getElementById("registerResult");
+if(name===""||email===""||flower===""||quantity==="") result.innerHTML="⚠️ Please fill all details.";
+else result.innerHTML="✅ Thank you "+name+"! Your "+flower+" registration is successful.";
+}
+
+function sendMessage(){
+alert("📩 Thank you! Your message has been sent successfully.");
+}
+</script>
+</body>
+</html>
